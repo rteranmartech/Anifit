@@ -4,54 +4,45 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ANIFIT — Personal Trainer</title>
-<meta name="description" content="Entrenamiento personalizado de alto rendimiento con ANIFIT. Programas a medida, resultados medibles y acompañamiento 1 a 1." />
-<meta name="theme-color" content="#ff6a00" />
+<meta name="description" content="Entrenamiento personalizado de alto rendimiento con ANIFIT. Productos y packs de entrenamiento con resultados medibles y acompañamiento 1 a 1." />
+<meta name="theme-color" content="#25d366" />
 <link rel="icon" href="/favicon.ico">
 <link rel="canonical" href="https://tudominio.cl/" />
 
-<!-- SEO / Social -->
 <meta property="og:title" content="ANIFIT — Personal Trainer" />
-<meta property="og:description" content="Entrenamiento personalizado de alto rendimiento con ANIFIT. Programas a medida, resultados medibles y acompañamiento 1 a 1." />
+<meta property="og:description" content="Entrenamiento personalizado de alto rendimiento con ANIFIT. Productos y packs de entrenamiento con resultados medibles y acompañamiento 1 a 1." />
 <meta property="og:image" content="https://tudominio.cl/og.jpg" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<!-- CSP básica (ajusta dominios según hosting/recursos usados) -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://i.postimg.cc data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self';" />
 
-<!-- Performance: fonts & hero image -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="https://i.postimg.cc/Df5z38BB/537826815-18371352583197273-94779248812835072-n.jpg" imagesizes="100vw" />
+<link rel="preload" as="image" href="https://i.postimg.cc/Df5z38BB/537826815-18371352583197273-94779248812835072-n.jpg" />
 
 <style>
-/* Diseño de alta gama, minimalista y funcional.
- * Paleta de colores:
- * #0B0D10 - Fondo principal (oscuro)
- * #F4F6F8 - Texto principal
- * #9AA3B2 - Texto secundario (muted mejorado)
- * #FF6A00 - Color de la marca (naranja vibrante)
- */
+/* Diseño de alta gama, minimalista y funcional */
 :root {
   --bg: #0b0d10;
   --text-main: #f4f6f8;
-  --text-muted: #9aa3b2; /* contraste levemente mayor */
-  --brand: #ff6a00;
-  --brand-light: #ff7f1a;
+  --text-muted: #9aa3b2;
+  --brand: #25d366;
+  --brand-light: #32e27a;
   --card: #14171c;
   --stroke: #2a2d32;
   --font-family: 'Poppins', sans-serif;
 
-  /* URLs de las 3 fotos para mobile */
+  /* Mobile hero */
   --img1-mobile: url('https://i.postimg.cc/6pP2Jy6D/534357933-18371357809197273-836142204639457257-n.jpg');
   --img2-mobile: url('https://i.postimg.cc/wjkzLrZF/Whats-App-Image-2025-08-21-at-16-18-01.jpg');
   --img3-mobile: url('https://i.postimg.cc/prCqJ0NN/Whats-App-Image-2025-08-21-at-15-43-29.jpg');
-  /* URL de la foto para escritorio */
+  /* Desktop hero */
   --img-desk: url('https://i.postimg.cc/Df5z38BB/537826815-18371352583197273-94779248812835072-n.jpg');
 }
 
-/* Base global */
+/* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html, body {
   height: 100%;
@@ -64,65 +55,122 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Respeta usuarios con reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-bg .layer, .scroll-indicator { animation: none !important; }
   html { scroll-behavior: auto; }
 }
-
-/* Ajuste por header sticky al navegar por anclas */
-section { padding: clamp(4rem, 8vw, 6rem) 0; scroll-margin-top: 80px; }
-
-a { color: var(--brand); text-decoration: none; transition: color 0.2s ease; }
+section { padding: clamp(3rem, 6vw, 5rem) 0; scroll-margin-top: 80px; }
+a { color: var(--brand); text-decoration: none; transition: color 0.2s ease, background-color .2s ease, border-color .2s ease; }
 a:hover { color: var(--brand-light); }
-
 h1, h2, h3, h4, h5, h6 { margin: 0 0 0.5rem; font-weight: 700; line-height: 1.2; }
 p { margin: 0; }
 .container { width: min(1200px, 92vw); margin-inline: auto; }
 .muted { color: var(--text-muted); }
 
-/* Skip link accesible */
+/* Accesibilidad: skip link */
 .skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 .skip-link:focus{ position:fixed; left:1rem; top:1rem; width:auto; height:auto; padding:.5rem 1rem; background:#fff; color:#000; border-radius:.5rem; z-index:9999; }
 
+/* Utilitarios */
 .badge { display: inline-block; padding: 0.3em 0.8em; border-radius: 999px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; background-color: var(--stroke); color: var(--text-muted); }
 .section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; text-align: center; margin-bottom: 3rem; position: relative; display: inline-block; width: 100%; }
 .section-title::after { content: ''; position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--brand); border-radius: 2px; }
-.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.card { background-color: var(--card); border: 1px solid var(--stroke); border-radius: 1rem; padding: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.card:hover { transform: translateY(-0.5rem); box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); will-change: transform, box-shadow; }
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; }
+.card { background-color: var(--card); border: 1px solid var(--stroke); border-radius: 1rem; padding: 1.1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-0.35rem); box-shadow: 0 1rem 2rem rgba(0,0,0,0.2); will-change: transform, box-shadow; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.5rem; border-radius: 0.75rem; font-weight: 600; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
-.btn-primary { background-color: var(--brand); color: var(--bg); box-shadow: 0 5px 15px rgba(255, 106, 0, 0.3); }
-.btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 8px 20px rgba(255, 106, 0, 0.45); }
+/* Botones */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.1rem; border-radius: 0.75rem; font-weight: 700; text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; gap: .5rem; }
+.btn-sm { padding: .55rem .85rem; font-size: .95rem; border-radius: .65rem; }
+.btn-primary { background-color: var(--brand); color: var(--bg); box-shadow: 0 5px 15px rgba(37,211,102,0.3); }
+.btn-primary:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 8px 20px rgba(37,211,102,0.45); }
 .btn-outline { background-color: transparent; color: var(--text-main); border: 1px solid var(--stroke); }
-.btn-outline:hover { background-color: rgba(255, 255, 255, 0.05); }
-.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn-outline:hover { background-color: rgba(255,255,255,0.05); }
+.btn-group { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
 
-/* Navegación */
-.nav { position: sticky; top: 0; z-index: 100; background-color: rgba(11, 13, 16, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--stroke); transition: background-color 0.3s ease; }
-.nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-.brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 900; font-size: 1.5rem; }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-link { font-weight: 500; color: var(--text-muted); position: relative; transition: color 0.2s ease; }
-.nav-link:hover { color: var(--text-main); }
-.nav-link::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px; background-color: var(--brand); transition: width 0.3s ease; }
-.nav-link:hover::after { width: 100%; }
-.hamburger { display: none; }
+/* ===================== NAVEGACIÓN ===================== */
+.nav { position: sticky; top: 0; z-index: 100; background-color: rgba(11,13,16,0.75); backdrop-filter: blur(10px); border-bottom: 1px solid var(--stroke); transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.nav.scrolled { background-color: rgba(11,13,16,0.92); box-shadow: 0 8px 24px rgba(0,0,0,0.35); border-color: #32363c; }
+
+/* Layout base (se mantiene para mobile) */
+.nav-inner { display: flex; justify-content: space-between; align-items: center; padding: .7rem 0; gap: .75rem; }
+.brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 900; font-size: 1.35rem; letter-spacing: .3px; }
+.nav-left { display:flex; align-items:center; gap:1rem; }
+.nav-center { display:flex; align-items:center; gap: 1.4rem; }
+.nav-right { display:flex; align-items:center; gap: .6rem; }
+.nav-links { display: flex; gap: 1.4rem; align-items: center; }
+.nav-link { font-weight: 600; color: var(--text-muted); position: relative; transition: color 0.2s ease; }
+.nav-link:hover, .nav-link.active { color: var(--text-main); }
+.nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background-color: var(--brand); transition: width 0.25s ease; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.hamburger { display: none; background: none; border: 1px solid var(--stroke); color: var(--text-main); font-size: 1.1rem; border-radius: .6rem; padding: .4rem .6rem; }
+
+/* ======= DESKTOP REHECHO (≥901px) ======= */
+@media (min-width: 901px) {
+  /* Grid para centrar el bloque de links exactamente al medio */
+  .nav-inner{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+    padding:.75rem 0;
+  }
+  .nav-left{ justify-self:start; }
+  .nav-center{ justify-self:center; }
+  .nav-right{ justify-self:end; }
+
+  /* Links como “pills”, sin subrayado animado, centrados y prolijos */
+  .nav-center .nav-link{
+    color: var(--text-main);
+    padding: .55rem .9rem;
+    border: 1px solid var(--stroke);
+    border-radius: .7rem;
+    background: rgba(255,255,255,0.02);
+    line-height: 1;
+  }
+  .nav-center .nav-link::after{ content:none; } /* quitamos barra inferior en desktop */
+  .nav-center .nav-link:hover,
+  .nav-center .nav-link.active{
+    border-color: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.05);
+    color: var(--text-main);
+  }
+
+  /* Ajuste de separación */
+  .nav-center{ gap: .6rem; } /* más compacto para que quede centrado y alineado */
+}
+
+/* ======= MOBILE ======= */
+.header-cta .btn-whatsapp::before{
+  content: ""; display:inline-block; width:1.05em; height:1.05em;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 24 24"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.07 0C5.5 0 .2 5.3.2 11.86c0 2.09.55 4.12 1.59 5.91L0 24l6.38-1.66a11.76 11.76 0 0 0 5.7 1.46h.01c6.56 0 11.86-5.3 11.86-11.86a11.78 11.78 0 0 0-3.43-8.46ZM12.08 21.2h-.01a9.3 9.3 0 0 1-4.75-1.3l-.34-.2-3.78.98 1.01-3.69-.22-.38a9.3 9.3 0 1 1 8.09 4.6Zm5.34-6.92c-.29-.14-1.72-.85-1.98-.95-.26-.1-.45-.14-.64.14-.19.29-.74.95-.91 1.14-.17.19-.34.22-.63.07-.29-.14-1.23-.45-2.33-1.44-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.59.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36 1.02 2.73 1.16 2.92c.14.19 2 3.05 4.85 4.28.68.29 1.21.46 1.62.59.68.22 1.29.19 1.78.12.54.08 1.72-.7 1.96-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/></svg>') no-repeat center / contain;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 24 24"><path d="M20.52 3.48A11.85 11.85 0 0 0 12.07 0C5.5 0 .2 5.3.2 11.86c0 2.09.55 4.12 1.59 5.91L0 24l6.38-1.66a11.76 11.76 0 0 0 5.7 1.46h.01c6.56 0 11.86-5.3 11.86-11.86a11.78 11.78 0 0 0-3.43-8.46ZM12.08 21.2h-.01a9.3 9.3 0 0 1-4.75-1.3l-.34-.2-3.78.98 1.01-3.69-.22-.38a9.3 9.3 0 1 1 8.09 4.6Zm5.34-6.92c-.29-.14-1.72-.85-1.98-.95-.26-.1-.45-.14-.64.14-.19.29-.74.95-.91 1.14-.17.19-.34.22-.63.07-.29-.14-1.23-.45-2.33-1.44-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.59.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.49-.64-.49h-.55c-.19 0-.5.07-.76.36s-.99.97-.99 2.36 1.02 2.73 1.16 2.92c.14.19 2 3.05 4.85 4.28.68.29 1.21.46 1.62.59.68.22 1.29.19 1.78.12.54.08 1.72-.7 1.96-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/></svg>') no-repeat center / contain;
+  background: currentColor; margin-right:.25rem;
+}
 
 /* HERO */
 .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-main); overflow: hidden; }
 .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
-.hero-bg::before { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 5; }
+.hero-bg::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 5; }
 .hero-bg .layer { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; animation: heroFade 18s infinite; }
 .hero-content { position: relative; z-index: 10; padding: 1rem; max-width: 800px; }
-.hero-title { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); margin-bottom: 1rem; }
+.hero-title { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 1.1; text-shadow: 0 4px 10px rgba(0,0,0,0.5); margin-bottom: 1rem; }
 .hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.4rem); font-weight: 400; max-width: 600px; margin: 0 auto; color: var(--text-muted); }
+.hero-content .btn-group {
+  justify-content: center;
+  width: 100%;
+}
 .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce 2s infinite; opacity: 0.8; }
 .scroll-indicator svg { width: 30px; height: 30px; }
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
 
-/* Acordeón */
+/* Fix: mantener centrado mientras rebota */
+@keyframes bounce {
+  0%,20%,50%,80%,100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -10px); }
+  60% { transform: translate(-50%, -5px); }
+}
+
+/* Acordeón (por qué ANIFIT) */
 .accordion { display: none; }
 .accordion-item { border-bottom: 1px solid var(--stroke); margin-bottom: 1rem; }
 .accordion-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
@@ -132,52 +180,94 @@ p { margin: 0; }
 .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; }
 .accordion-content.expanded { max-height: 200px; padding-bottom: 1rem; }
 
-/* Programas */
-.plans .card { text-align: center; display: flex; flex-direction: column; }
-.plans .card.highlight { border-color: var(--brand); box-shadow: 0 0 20px rgba(255, 106, 0, 0.2); transform: scale(1.02); }
-.plans .card.highlight:hover { transform: scale(1.02) translateY(-0.5rem); }
-.plans h3 { font-size: 1.5rem; font-weight: 800; }
-.plans .price { font-size: 2.5rem; font-weight: 900; color: var(--brand); margin: 0.5rem 0 1rem; }
-.plans ul { list-style: none; padding: 0; margin: 1rem 0 2rem; text-align: left; flex-grow: 1; }
-.plans li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; color: var(--text-muted); }
-.plans li::before { content: '✓'; color: var(--brand); font-weight: bold; position: absolute; left: 0; }
-.plans .btn { width: 100%; }
+/* PRODUCTOS */
+.products .card { padding: 0; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
+.product-media { position: relative; aspect-ratio: 4/3; background: #0f1216; border-bottom: 1px solid var(--stroke); }
+.product-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-body { padding: 1rem 1.1rem; }
+.product-title { font-size: 1.15rem; font-weight: 800; margin-bottom: .15rem; }
+.product-sub { color: var(--text-muted); font-size: .95rem; }
+.product-price { margin-top: .65rem; font-size: 1.4rem; font-weight: 900; color: var(--brand); }
+.product-actions { padding: 0 1.1rem 1.1rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+.product-actions .btn { flex: 1 1 auto; min-width: 44%; }
 
-/* Formulario */
-.form-card { display: grid; gap: 1rem; }
-.form-card .input { width: 100%; padding: 0.8rem 1rem; border-radius: 0.5rem; border: 1px solid var(--stroke); background-color: #1a1e24; color: var(--text-main); outline: none; font-family: inherit; font-size: 1rem; }
-.form-card .input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.2); }
-.form-card label { font-weight: 600; color: var(--text-muted); }
-.form-card label span { display: block; margin-bottom: 0.5rem; }
-.form-card .consent { display: flex; align-items: center; gap: .5rem; font-size: .95rem; }
-textarea.input { resize: vertical; }
+/* Más información (toggle por card) */
+.product-more { border-top: 1px solid var(--stroke); max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease, opacity .25s ease; opacity: 0; padding: 0 1.1rem; }
+.product-more.open { max-height: 320px; padding: 1rem 1.1rem 1.15rem; opacity: 1; }
+.product-more p, .product-more ul { color: var(--text-muted); }
+.product-more ul { padding-left: 1.1rem; margin: .5rem 0 0; }
+.btn-more[aria-expanded="true"] { filter: brightness(1.08); }
+
+/* WhatsApp CTA section */
+.whatsapp-cta {
+  display: grid; grid-template-columns: 96px 1fr auto;
+  align-items: center; gap: 1.25rem;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border: 1px solid var(--brand);
+  background:
+    radial-gradient(1200px 200px at 10% 0%, rgba(37,211,102,0.12), transparent 60%),
+    linear-gradient(180deg, #171a1f 0%, #111418 100%);
+  position: relative; overflow: hidden;
+}
+.whatsapp-cta::after{
+  content:''; position:absolute; inset:-2px;
+  background: conic-gradient(from 180deg at 50% 50%, rgba(37,211,102,.18), transparent 40%, rgba(37,211,102,.18) 80%, transparent 100%);
+  filter: blur(24px); opacity:.25; pointer-events:none;
+}
+.whatsapp-cta .icon{
+  width: 72px; height:72px; border-radius:1rem;
+  display:grid; place-items:center;
+  background: #1d2229; border:1px solid var(--stroke);
+}
+.whatsapp-cta h3{ font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 800; margin-bottom:.25rem; }
+.whatsapp-cta p{ color: var(--text-muted); }
+.whatsapp-cta .cta-actions{ display:flex; gap:.75rem; flex-wrap:wrap; }
 
 /* Footer */
-footer { padding: 2rem 0; border-top: 1px solid var(--stroke); text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+footer{
+  text-align: center;
+  padding: 2rem 0 1.5rem;
+  font-size: .9rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--stroke);
+  margin-top: 2rem;
+}
+footer .logo{
+  font-weight: 900;
+  color: var(--text-main);
+  font-size: 1rem;
+  margin-bottom: .25rem;
+}
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background-color: rgba(11, 13, 16, 0.95); padding: 1rem; border-top: 1px solid var(--stroke); }
+/* Responsive */
+@media (max-width: 900px){
+  .nav-center { display: none; }
+  .hamburger { display: block; }
+
+  .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background-color: rgba(11,13,16,0.96); padding: 1rem; border-top: 1px solid var(--stroke); }
   .nav-links.active { display: flex; }
-  .hamburger { display: block; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
-  .hero { height: 100vh; }
+  .nav-links a { padding: .4rem 0; }
 
-  /* 3 imágenes animadas en mobile */
+  .hero { height: 100vh; }
   .hero-bg .layer { display: block; }
   .hero-bg .l1 { background-image: var(--img1-mobile); animation-delay: 0s; }
   .hero-bg .l2 { background-image: var(--img2-mobile); animation-delay: 6s; }
   .hero-bg .l3 { background-image: var(--img3-mobile); animation-delay: 12s; }
   @keyframes heroFade { 0% { opacity: 0; transform: scale(1.1); } 6% { opacity: 1; transform: scale(1); } 27% { opacity: 1; transform: scale(1.05); } 33% { opacity: 0; transform: scale(1.1); } 100% { opacity: 0; } }
 
-  /* Acordeón visible, tarjetas ocultas */
   .grid-cards.reasons-cards { display: none; }
   .accordion { display: block; }
-}
 
-@media (min-width: 769px) {
+  .whatsapp-cta{
+    grid-template-columns: 1fr; text-align: center; gap: 1rem;
+  }
+  .whatsapp-cta .icon{ margin: 0 auto; width:64px; height:64px; }
+  .whatsapp-cta .cta-actions{ justify-content:center; }
+}
+@media (min-width: 901px) {
   .hero-bg .layer { display: none; }
   .hero-bg { background-image: var(--img-desk); background-size: cover; background-position: center top; background-attachment: fixed; }
-  .hero-bg::before { background: rgba(0, 0, 0, 0.6); }
+  .hero-bg::before { background: rgba(0,0,0,0.6); }
   .accordion { display: none; }
   .grid-cards.reasons-cards { display: grid; }
 }
@@ -187,15 +277,20 @@ footer { padding: 2rem 0; border-top: 1px solid var(--stroke); text-align: cente
 
 <a class="skip-link" href="#main">Saltar al contenido</a>
 
-<header class="nav">
+<header class="nav" id="site-nav">
   <div class="container nav-inner">
-    <a class="brand" href="#home">ANIFIT</a>
-    <nav id="primary-nav" class="nav-links" aria-label="principal">
-      <a class="nav-link" href="#programas">Programas</a>
-      <a class="nav-link" href="#contacto">Contacto</a>
-      <a class="btn btn-outline" href="#reserva">Reserva tu evaluación</a>
+    <div class="nav-left">
+      <a class="brand" href="#home" aria-label="Inicio ANIFIT">ANIFIT</a>
+    </div>
+
+    <nav class="nav-center nav-links" id="primary-nav" role="navigation" aria-label="principal">
+      <a class="nav-link" href="#productos" data-navlink>Productos</a>
+      <a class="nav-link" href="#contacto" data-navlink>Contacto</a>
     </nav>
-    <button class="hamburger" aria-label="Abrir menú" aria-controls="primary-nav" aria-expanded="false">☰</button>
+
+    <div class="nav-right header-cta" aria-label="acciones rápidas">
+      <button class="hamburger" aria-label="Abrir menú" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
@@ -208,10 +303,10 @@ footer { padding: 2rem 0; border-top: 1px solid var(--stroke); text-align: cente
   </div>
   <div class="hero-content">
     <h1 class="hero-title">ANIFIT<br/>Personal Trainer</h1>
-    <p class="hero-subtitle muted">Programas hechos a tu medida: recomposición corporal, fuerza funcional y preparación escénica. Medimos, optimizamos y acompañamos cada semana.</p>
+    <p class="hero-subtitle muted">Productos y packs pensados para tu objetivo: recomposición, fuerza funcional y preparación escénica. Medimos, optimizamos y acompañamos cada semana.</p>
     <div class="btn-group">
-      <a class="btn btn-primary" href="#reserva">Evaluación Gratis</a>
-      <a class="btn btn-outline" href="#programas">Ver programas</a>
+      <a class="btn btn-primary" href="#reserva">Quiero un plan</a>
+      <a class="btn btn-outline" href="#productos">Ver productos</a>
     </div>
   </div>
   <a class="scroll-indicator" href="#propuesta" aria-label="Desplazarse hacia abajo">
@@ -227,49 +322,45 @@ footer { padding: 2rem 0; border-top: 1px solid var(--stroke); text-align: cente
     <h2 class="section-title">¿Por qué ANIFIT?</h2>
     <div class="grid-cards reasons-cards">
       <div class="card">
-        <span class="badge">1 a 1</span>
-        <h3>Acompañamiento real</h3>
-        <p class="muted">Seguimiento semanal por objetivos y ajustes de carga, nutrición y hábitos.</p>
+        <h3>Acompañamiento constante</h3>
+        <p class="muted">Entrenas con un plan diseñado para ti y ajustado semana a semana, no es una rutina genérica: es un seguimiento real para que avances sin perder motivación.</p>
       </div>
       <div class="card">
-        <span class="badge">Data</span>
-        <h3>Medimos el progreso</h3>
-        <p class="muted">Indicadores claros: % de grasa, perímetros, fuerza y adherencia.</p>
+        <h3>Progreso visible</h3>
+        <p class="muted">Tus entrenamientos evolucionan contigo, cada fase suma intensidad y variedad, asegurando que notes mejoras en tu fuerza, energía y forma física.</p>
       </div>
       <div class="card">
-        <span class="badge">Escena</span>
-        <h3>Preparación estética</h3>
-        <p class="muted">Postura, posing, presencia y pulido final si vas a competir o a una sesión de fotos.</p>
+        <h3>Resultados reales</h3>
+        <p class="muted">El objetivo no es solo entrenar, es transformar, con disciplina guiada y planes personalizados, alcanzas cambios duraderos en tu cuerpo y bienestar.</p>
       </div>
     </div>
 
-    <!-- Acordeón accesible en móvil -->
     <div class="accordion">
       <div class="accordion-item">
         <div class="accordion-header" role="button" aria-expanded="false" aria-controls="acc1">
-          <h3>Acompañamiento real</h3>
+          <h3>Acompañamiento constante</h3>
           <span class="accordion-icon" aria-hidden="true" style="font-size: 24px;">+</span>
         </div>
         <div id="acc1" class="accordion-content" aria-hidden="true">
-          <p class="muted">Seguimiento semanal por objetivos y ajustes de carga, nutrición y hábitos.</p>
+          <p class="muted">Entrenas con un plan diseñado para ti y ajustado semana a semana, no es una rutina genérica: es un seguimiento real para que avances sin perder motivación.</p>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header" role="button" aria-expanded="false" aria-controls="acc2">
-          <h3>Medimos el progreso</h3>
+          <h3>Progreso visible</h3>
           <span class="accordion-icon" aria-hidden="true" style="font-size: 24px;">+</span>
         </div>
         <div id="acc2" class="accordion-content" aria-hidden="true">
-          <p class="muted">Indicadores claros: % de grasa, perímetros, fuerza y adherencia.</p>
+          <p class="muted">Tus entrenamientos evolucionan contigo, cada fase suma intensidad y variedad, asegurando que notes mejoras en tu fuerza, energía y forma física.</p>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header" role="button" aria-expanded="false" aria-controls="acc3">
-          <h3>Preparación estética</h3>
+          <h3>Resultados reales</h3>
           <span class="accordion-icon" aria-hidden="true" style="font-size: 24px;">+</span>
         </div>
         <div id="acc3" class="accordion-content" aria-hidden="true">
-          <p class="muted">Postura, posing, presencia y pulido final si vas a competir o a una sesión de fotos.</p>
+          <p class="muted">El objetivo no es solo entrenar, es transformar, con disciplina guiada y planes personalizados, alcanzas cambios duraderos en tu cuerpo y bienestar.</p>
         </div>
       </div>
     </div>
@@ -278,154 +369,218 @@ footer { padding: 2rem 0; border-top: 1px solid var(--stroke); text-align: cente
 
 <section id="reserva">
   <div class="container">
-    <h2 class="section-title">Reserva tu evaluación</h2>
-    <div class="grid-cards">
-      <form class="card form-card" method="POST" action="/api/reserva" novalidate>
-        <label>
-          <span>Nombre</span>
-          <input class="input" type="text" name="nombre" autocomplete="name" required placeholder="Tu nombre" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input class="input" type="email" name="email" autocomplete="email" required placeholder="correo@dominio.com" />
-        </label>
-        <label>
-          <span>Objetivo</span>
-          <select class="input" name="objetivo" required>
-            <option>Recomposición corporal</option>
-            <option>Fuerza</option>
-            <option>Escénico / Fotos</option>
-          </select>
-        </label>
-        <label>
-          <span>Mensaje</span>
-          <textarea class="input" name="mensaje" rows="4" placeholder="Cuéntame tu punto de partida y meta"></textarea>
-        </label>
-        <label class="consent">
-          <input type="checkbox" required name="consent" /> Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a>.
-        </label>
-        <button class="btn btn-primary" type="submit">Enviar</button>
-      </form>
-      <div class="card">
+    <div class="whatsapp-cta card" role="region" aria-label="Contacto por WhatsApp">
+      <div class="icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.5 12a9.5 9.5 0 0 1-13.9 8.4L3 21l.7-4.2A9.5 9.5 0 1 1 21.5 12z"/>
+          <path d="M8.5 9.5c.7 2.1 2.9 4.2 5 5l1.6-.8a1 1 0 0 1 1.2.3l1 1.3a1 1 0 0 1-.1 1.3c-1.2 1.3-3.8 1.6-7.2-.6-3.4-2.1-4.8-4.9-4.6-6.5.1-.6.6-1.1 1.2-1.3l1.5-.4a1 1 0 0 1 1.2.7z"/>
+        </svg>
+      </div>
+
+      <div>
         <h3>¿Prefieres WhatsApp?</h3>
-        <p class="muted">Escríbeme directo y agendamos la evaluación inicial.</p>
-        <p class="muted">📞 <a href="tel:+56912345678">+56 9 1234 5678</a></p>
-        <p class="muted">📍 Santiago, Chile</p>
-        <a class="btn btn-primary" href="https://wa.me/56912345678" target="_blank" rel="noopener">Abrir WhatsApp</a>
+        <p class="muted">Escríbeme directo y agendamos tu evaluación inicial. Respuesta rápida y personalizada.</p>
+      </div>
+
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://wa.me/56912345678" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp para contactar a ANIFIT">
+          Abrir WhatsApp
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="programas">
+<section id="contacto" aria-hidden="true" style="padding:0;"></section>
+
+<section id="productos" aria-label="Productos ANIFIT">
   <div class="container">
-    <h2 class="section-title">Programas</h2>
-    <div class="grid-cards plans">
-      <div class="card">
-        <h3>Básico</h3>
-        <p class="muted">Reencuentro · 3 días/semana</p>
-        <div class="price">$89.000 / mes</div>
-        <ul>
-          <li>Evaluación inicial</li>
-          <li>Plan de entrenamiento + video</li>
-          <li>Check-in quincenal</li>
-          <li>Guía nutricional base</li>
-        </ul>
-        <a class="btn btn-primary" href="#reserva">Elegir</a>
-      </div>
-      <div class="card highlight">
-        <h3>Pro</h3>
-        <p class="muted">Recomposición · 4–5 días/semana</p>
-        <div class="price">$129.000 / mes</div>
-        <ul>
-          <li>Plan 100% personalizado</li>
-          <li>Ajustes semanales</li>
-          <li>Macros y timing nutricional</li>
-          <li>Soporte por WhatsApp</li>
-        </ul>
-        <a class="btn btn-primary" href="#reserva">Popular</a>
-      </div>
-      <div class="card">
-        <h3>Stage</h3>
-        <p class="muted">Escénico · 6 días/semana</p>
-        <div class="price">A convenir</div>
-        <ul>
-          <li>Preparación completa</li>
-          <li>Posing y presentación</li>
-          <li>Protocolo de escena</li>
-          <li>Checklist y backstage</li>
-        </ul>
-        <a class="btn btn-primary" href="#reserva">Voy por todo</a>
-      </div>
+    <h2 class="section-title">Productos</h2>
+
+    <div class="grid-cards products">
+      <article class="card product" itemscope itemtype="https://schema.org/Product">
+        <div class="product-media">
+          <img loading="lazy" src="https://i.postimg.cc/8P7r0dKx/prod1-1200x900.jpg" alt="Producto 1 — Plan de Entrenamiento Inicial" itemprop="image" width="1200" height="900">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" itemprop="name">Pack Inicio — 4 Semanas</h3>
+          <p class="product-sub" itemprop="description">Evaluación + plan personalizado con ajustes semanales.</p>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="CLP" />
+            <span itemprop="price">$79.990</span>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a class="btn btn-primary"
+              href="https://wa.me/56912345678?text=Hola%20ANIFIT,%20quiero%20comprar%20el%20Pack%20Inicio%204%20Semanas."
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Comprar Pack Inicio por WhatsApp">
+            Comprar aquí
+          </a>
+          <button class="btn btn-outline btn-more" aria-expanded="false" aria-controls="more-1">Más información</button>
+        </div>
+        <div class="product-more" id="more-1" hidden aria-hidden="true">
+          <p>Incluye:</p>
+          <ul>
+            <li>Evaluación inicial y objetivos.</li>
+            <li>Plan semanal ajustado al progreso.</li>
+            <li>Soporte por WhatsApp (L–V).</li>
+          </ul>
+          <p style="margin-top:.75rem;">Ver ficha completa: <a href="https://tudominio.cl/productos/pack-inicio" target="_blank" rel="noopener noreferrer">tudominio.cl/productos/pack-inicio</a></p>
+        </div>
+      </article>
+
+      <article class="card product" itemscope itemtype="https://schema.org/Product">
+        <div class="product-media">
+          <img loading="lazy" src="https://i.postimg.cc/c1Z3sP8f/prod2-1200x900.jpg" alt="Producto 2 — Plan Intermedio" itemprop="image" width="1200" height="900">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" itemprop="name">Pack Progreso — 8 Semanas</h3>
+          <p class="product-sub" itemprop="description">Ciclos de fuerza y recomposición con progresiones claras.</p>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="CLP" />
+            <span itemprop="price">$149.990</span>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a class="btn btn-primary"
+              href="https://wa.me/56912345678?text=Hola%20ANIFIT,%20quiero%20comprar%20el%20Pack%20Progreso%208%20Semanas."
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Comprar Pack Progreso por WhatsApp">
+            Comprar aquí
+          </a>
+          <button class="btn btn-outline btn-more" aria-expanded="false" aria-controls="more-2">Más información</button>
+        </div>
+        <div class="product-more" id="more-2" hidden aria-hidden="true">
+          <p>Incluye:</p>
+          <ul>
+            <li>Evaluación + control quincenal.</li>
+            <li>Plan periodizado (2 bloques de 4 semanas).</li>
+            <li>Biblioteca de ejercicios y feedback técnico.</li>
+          </ul>
+          <p style="margin-top:.75rem;">Ver ficha completa: <a href="https://tudominio.cl/productos/pack-progreso" target="_blank" rel="noopener noreferrer">tudominio.cl/productos/pack-progreso</a></p>
+        </div>
+      </article>
+
+      <article class="card product" itemscope itemtype="https://schema.org/Product">
+        <div class="product-media">
+          <img loading="lazy" src="https://i.postimg.cc/4d4Zb2p8/prod3-1200x900.jpg" alt="Producto 3 — Plan Avanzado" itemprop="image" width="1200" height="900">
+        </div>
+        <div class="product-body">
+          <h3 class="product-title" itemprop="name">Pack Escénico — 12 Semanas</h3>
+          <p class="product-sub" itemprop="description">Preparación completa para objetivo escénico o fecha clave.</p>
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="CLP" />
+            <span itemprop="price">$219.990</span>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a class="btn btn-primary"
+              href="https://wa.me/56912345678?text=Hola%20ANIFIT,%20quiero%20comprar%20el%20Pack%20Esc%C3%A9nico%2012%20Semanas."
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Comprar Pack Escénico por WhatsApp">
+            Comprar aquí
+          </a>
+          <button class="btn btn-outline btn-more" aria-expanded="false" aria-controls="more-3">Más información</button>
+        </div>
+        <div class="product-more" id="more-3" hidden aria-hidden="true">
+          <p>Incluye:</p>
+          <ul>
+            <li>Evaluación + control semanal.</li>
+            <li>Nutrición base (lineamientos) y recuperación.</li>
+            <li>Peak week y simulacro final.</li>
+          </ul>
+          <p style="margin-top:.75rem;">Ver ficha completa: <a href="https://tudominio.cl/productos/pack-escenico" target="_blank" rel="noopener noreferrer">tudominio.cl/productos/pack-escenico</a></p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
-  <div class="container">© <span id="y"></span> ANIFIT — Personal Trainer. Todos los derechos reservados.</div>
+  <div class="container">
+    <div class="logo">ANIFIT</div>
+    <p>&copy; 2024 ANIFIT — Todos los derechos reservados.</p>
+  </div>
 </footer>
 
-<!-- Schema.org: ajusta a tus datos reales -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
-  "name": "ANIFIT — Personal Trainer",
-  "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
-  "areaServed": "Santiago, Chile",
-  "telephone": "+56912345678",
-  "url": "https://tudominio.cl/",
-  "sameAs": ["https://www.instagram.com/tu_instagram"]
-}
-</script>
-
 <script>
-  // Año en footer
-  document.getElementById('y').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll header animation
+    const nav = document.getElementById('site-nav');
+    if (nav) {
+        let isScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50 && !isScrolled) {
+                nav.classList.add('scrolled');
+                isScrolled = true;
+            } else if (window.scrollY <= 50 && isScrolled) {
+                nav.classList.remove('scrolled');
+                isScrolled = false;
+            }
+        });
+    }
 
-  // Mobile nav toggle accesible
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.getElementById('primary-nav');
-  hamburger?.addEventListener('click', () => {
-    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', String(!expanded));
-    navLinks.classList.toggle('active');
-  });
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('primary-nav');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('active');
+        });
+    }
 
-  // Acordeón accesible
-  const accordionItems = document.querySelectorAll('.accordion-item');
-  accordionItems?.forEach(item => {
-    const header = item.querySelector('.accordion-header');
-    const content = item.querySelector('.accordion-content');
-    const icon = item.querySelector('.accordion-icon');
+    // Accordion functionality for mobile
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
 
-    header.addEventListener('click', () => {
-      const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
 
-      // Cierra todos
-      accordionItems.forEach(i => {
-        i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
-        i.querySelector('.accordion-content').setAttribute('aria-hidden', 'true');
-        i.querySelector('.accordion-icon').classList.remove('rotated');
-        i.querySelector('.accordion-content').classList.remove('expanded');
-      });
+            // Close other open accordions
+            accordionHeaders.forEach(otherHeader => {
+                if (otherHeader !== header) {
+                    const otherContent = otherHeader.nextElementSibling;
+                    const otherIcon = otherHeader.querySelector('.accordion-icon');
+                    if (otherHeader.getAttribute('aria-expanded') === 'true') {
+                        otherHeader.setAttribute('aria-expanded', 'false');
+                        otherContent.classList.remove('expanded');
+                        otherIcon.classList.remove('rotated');
+                        otherContent.setAttribute('aria-hidden', 'true');
+                    }
+                }
+            });
 
-      // Abre el actual si no estaba
-      if (!isExpanded) {
-        header.setAttribute('aria-expanded', 'true');
-        content.setAttribute('aria-hidden', 'false');
-        content.classList.add('expanded');
-        icon.classList.add('rotated');
-      }
+            // Toggle current accordion
+            header.setAttribute('aria-expanded', !isExpanded);
+            content.classList.toggle('expanded');
+            icon.classList.toggle('rotated');
+            content.setAttribute('aria-hidden', isExpanded);
+        });
     });
-  });
 
-  // Manejo de envío del formulario (demo). Si tienes backend, quita preventDefault.
-  document.querySelector('form')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('¡Gracias! Te contactaré hoy mismo.');
-  });
+    // Product "More info" toggle
+    const infoButtons = document.querySelectorAll('.btn-more');
+    infoButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true' || false;
+            const moreInfoBlock = document.getElementById(button.getAttribute('aria-controls'));
+
+            button.setAttribute('aria-expanded', !expanded);
+            moreInfoBlock.classList.toggle('open');
+            moreInfoBlock.hidden = expanded;
+            moreInfoBlock.setAttribute('aria-hidden', !expanded);
+        });
+    });
+});
 </script>
+
 </body>
 </html>
